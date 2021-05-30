@@ -1035,11 +1035,12 @@ def clear_bucket_and_send_OTP(storage_url, mobile, request_header):
     return txnId
 
 
-def generate_token_OTP(mobile, request_header):
+def generate_token_OTP(mobile, request_header,bucket):
     """
     This function generate OTP and returns a new token or None when not able to get token
     """
-    storage_url = "https://kvdb.io/ASth4wnvVDPkg2bdjsiqMN/" + mobile
+    # storage_url = "https://kvdb.io/ASth4wnvVDPkg2bdjsiqMN/" + mobile
+    storage_url = "https://kvdb.io/" + bucket + "/"+ mobile
 
     txnId = clear_bucket_and_send_OTP(storage_url, mobile, request_header)
 

@@ -48,7 +48,8 @@ def main():
             while token is None:
                 if otp_pref=="n":
                     try:
-                        token = generate_token_OTP(mobile, base_request_header)
+                        storage_url = input("\n Enter kvdb bucket name: ")
+                        token = generate_token_OTP(mobile, base_request_header,storage_url)
                     except Exception as e:
                         print(str(e))
                         print('OTP Retrying in 5 seconds')
